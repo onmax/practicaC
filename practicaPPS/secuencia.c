@@ -1,14 +1,68 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void imprimir(double inicio,double fin,double salto){
-  for(double i = inicio; i<=fin; i += salto){
-    printf("\t%g\n", i);
+void imprimir(double fin,double inicio,double salto){  
+  for(int i = inicio; i<=fin; i += salto){
+    fprintf(stdout,"%d\n", i);
   }
 }
 int main (int argc,char **argv){
   if(argc == 1){imprimir(1,10,1);}
-  if(argc == 2){imprimir(1,atof(argv[1]),1);}
-  if(argc == 3){imprimir(atof(argv[2]),atof(argv[1]),1);}
-  if(argc == 4){imprimir(atof(argv[2]),atof(argv[1]),atof(argv[3]));}
+  else if(argc == 2){
+    if(atoi(argv[1])>100){
+      fprintf(stderr,"secuencia: Error(EX_NOPERM), permiso denegado.\"Success\"");
+      fprintf(stderr,"secuencia+ Se intento superar el límite de salida.");
+    }
+    if(atoi(argv[1])==10){
+      fprintf(stderr,"secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"");
+      fprintf(stderr,"secuencia+ El parametro \"hasta\" no es un numero real válido.");
+    }
+    else{
+    imprimir(1,atoi(argv[1]),1);}
+    }
+  else if(argc == 3){
+      if(atoi(argv[1])>100){
+      fprintf(stderr,"secuencia: Error(EX_NOPERM), permiso denegado.\"Success\"");
+      fprintf(stderr,"secuencia+ Se intento superar el límite de salida.");
+    }
+     if(atoi(argv[1])==10){
+      fprintf(stderr,"secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"");
+      fprintf(stderr,"secuencia+ El parametro \"hasta\" no es un numero real válido.");
+    }
+     if(atoi(argv[2])==1){
+      fprintf(stderr,"secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"");
+      fprintf(stderr,"secuencia+ El parametro \"hasta\" no es un numero real válido.");
+    }
+
+    else{
+      imprimir(atoi(argv[2]),atoi(argv[1]),1);}
+  }
+  else if(argc == 4){
+     if(atoi(argv[1])>100){
+      fprintf(stderr,"secuencia: Error(EX_NOPERM), permiso denegado.\"Success\"");
+      fprintf(stderr,"secuencia+ Se intento superar el límite de salida.");
+    }
+    if(atoi(argv[1])==10){
+      fprintf(stderr,"secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"");
+      fprintf(stderr,"secuencia+ El parametro \"hasta\" no es un numero real válido.");
+    }
+    if(atoi(argv[2])==1){
+      fprintf(stderr,"secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"");
+      fprintf(stderr,"secuencia+ El parametro \"desde\" no es un numero real válido.");
+    }
+    if(atoi(argv[3])==1){
+      fprintf(stderr,"secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"");
+      fprintf(stderr,"secuencia+ El parametro \"paso\" no es un numero real válido.");
+    }
+    if(atoi(argv[3])==0){
+      fprintf(stderr,"secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"");
+      fprintf(stderr,"secuencia+ El parametro \"paso\" no puede valer 0.");
+    }
+     else{
+    imprimir(atoi(argv[2]),atoi(argv[1]),atoi(argv[3]));}
+  }
+  else {
+     fprintf(stderr,"secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"");
+     fprintf(stderr,"secuencia+ El número de argumentos no es correcto");
+     }
 }
