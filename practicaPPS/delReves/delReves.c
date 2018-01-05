@@ -8,7 +8,8 @@ int main (int argc,char **argv){
 			printf("delreves: Uso: delreves [ fichero... ]\n");
 			printf("delreves: Invierte el contenido de las lineas de los ficheros (o de la entrada).\n");
 	}else{
-		for(int i=1;i<argc;i++){
+		int i;
+		for(i=1;i<argc;i++){
 			FILE *fp;
 			fp = fopen(argv[i] , "r");
 			char str[2048];
