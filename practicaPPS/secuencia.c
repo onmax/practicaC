@@ -1,8 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void imprimir(double fin,double inicio,double salto){  
-  for(int i = inicio; i<=fin; i += salto){
+void imprimir(double fin,double inicio,double salto){
+  int i;
+  for(i = inicio; i<=fin; i += salto){
     fprintf(stdout,"%d\n", i);
   }
 }
