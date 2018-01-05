@@ -39,15 +39,15 @@ int main (int argc,char **argv){
           if(atoi(argv[2])==1)
             error("secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","secuencia+ El parametro \"desde\" no es un numero real válido.");
 
-          if(atoi(argv[3])==1){
+          if(atoi(argv[3])==1)
             error("secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","secuencia+ El parametro \"paso\" no es un numero real válido."));
-          }
-          if(atoi(argv[3])==0){
+
+          if(atoi(argv[3])==0)
             error("secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","secuencia+ El parametro \"paso\" no puede valer 0.");
-          }
-          else{
+
+          else
             imprimir(atoi(argv[2]),atoi(argv[1]),atoi(argv[3]));
-          }
+
           break;
 
         default:
