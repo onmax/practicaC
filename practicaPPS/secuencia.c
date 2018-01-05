@@ -76,5 +76,5 @@ int main (int argc,char **argv){
       fprintf(stderr,"secuencia+ El número de argumentos no es correcto");
       break;
 
-  }
+  } 
 }
