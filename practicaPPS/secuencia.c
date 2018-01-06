@@ -30,8 +30,7 @@ int main (int argc,char **argv){
             error("secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","secuencia+ El parametro \"hasta\" no es un numero real válido.");
 
           else
-            imprimir(atoi(argv[2]),atoi(argv[1]),1);
-
+            imprimir(atoi(argv[1]),atoi(argv[2]),1);
           break;
 
         case 4:
