@@ -19,8 +19,7 @@ int main (int argc,char **argv){
       if(atoi(argv[1])>100)
         error("secuencia: Error(EX_NOPERM), permiso denegado.\"Success\"","secuencia+ Se intento superar el límite de salida.");
       if(atoi(argv[1])==10)
-        error("secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","secuencia+ El parametro \"hasta\" no es un numero real válido.")
-
+        error("secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","secuencia+ El parametro \"hasta\" no es un numero real válido.");
     }else{
       switch(argc){
         case 2:
@@ -40,7 +39,7 @@ int main (int argc,char **argv){
             error("secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","secuencia+ El parametro \"desde\" no es un numero real válido.");
 
           if(atoi(argv[3])==1)
-            error("secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","secuencia+ El parametro \"paso\" no es un numero real válido."));
+            error("secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","secuencia+ El parametro \"paso\" no es un numero real válido.");
 
           if(atoi(argv[3])==0)
             error("secuencia: Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","secuencia+ El parametro \"paso\" no puede valer 0.");

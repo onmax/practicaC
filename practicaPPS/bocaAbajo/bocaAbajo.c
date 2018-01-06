@@ -3,12 +3,9 @@
 #include<string.h>
 #define MAX 2048
 
-int getN(FILE *fp, int contador){
-	char c;
-	while(!feof(fp)){
-		 c = getc(fp);
-		 contador++;
-	}
+int getN(FILE *fp){
+	int contador = 0;
+	while(!feof(fp)){contador++;}
 	return contador;
 }
 
@@ -21,12 +18,11 @@ int main (int argc,char **argv){
 		for(i=argc-1;i>0;i--){
 			FILE *fp;
 			fp = fopen(argv[i] , "r");
-			int contador = 0;
-			contador = getN(fp, contador);
-			printf("%d\n", contador);
-			for(int i=contador; i>=0; i--){
-				if(	)
-			}
+			int tam = getN(fp);
+			char string[tam];
+			// while(fgets(string, tam, fp) != NULL) {
+			// 	printf("%s\n", string);
+			// }
 			fclose(fp);
 		}
 	}
