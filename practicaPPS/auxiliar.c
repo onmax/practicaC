@@ -49,3 +49,19 @@ void Error(int exitval, char * fmt, ...)
 
 	exit(exitval);
 }
+void imprimir(double fin,double inicio,double salto){
+  double i;
+  if(inicio < fin){
+    for(i = inicio; i<=fin; i += salto){
+      fprintf(stdout,"\t%g\n", i);
+    }
+  }else{
+    for(i = inicio; i>=fin; i += salto){
+      fprintf(stdout,"\t%g\n", i);
+    }
+  }
+}
+void error(char *primero, char *segundo){
+  fprintf(stderr, "%s%s\n", "secuencia: ", primero);
+  fprintf(stderr, "%s%s\n", "+secuencia ",segundo);
+}
