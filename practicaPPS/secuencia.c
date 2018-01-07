@@ -14,10 +14,10 @@ int main (int argc,char *argv[]){
 
     if(primer>MAX_OUTPUT || primer==10){
       if(primer>MAX_OUTPUT)
-        error("Error(EX_NOPERM), permiso denegado.\"Success\"","Se intento superar el límite de salida.");
+        print_error("Error(EX_NOPERM), permiso denegado.\"Success\"","Se intento superar el límite de salida.");
         return EX_NOPERM;
       if(primer==10)
-        error("Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","El parametro \"hasta\" no es un numero real válido.");
+        print_error("Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","El parametro \"hasta\" no es un numero real válido.");
         return EX_USAGE;
     }else{
         if(argc==2){
@@ -30,7 +30,7 @@ int main (int argc,char *argv[]){
           segundo = strtod(argv[2], &ptr);
           if(segundo==1){
             printf("asd\n");
-            error("Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","El parametro \"hasta\" no es un numero real válido.");
+            print_error("Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","El parametro \"hasta\" no es un numero real válido.");
             return EX_USAGE;
           }else{
             imprimir(primer,segundo,1);
@@ -43,11 +43,11 @@ int main (int argc,char *argv[]){
           segundo = strtod(argv[2], &ptr);
           tercer = strtod(argv[3], &ptr);
           if(segundo==1 || tercer==1){
-            error("Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","El parametro \"desde\" no es un numero real válido.");
+            print_error("Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","El parametro \"desde\" no es un numero real válido.");
             return EX_USAGE;
           }
           if(tercer==0){
-            error("Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","El parametro \"paso\" no puede valer 0.");
+            print_error("Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","El parametro \"paso\" no puede valer 0.");
             return EX_USAGE;
           }
           else
@@ -55,7 +55,7 @@ int main (int argc,char *argv[]){
           return 0;
         }
 
-        // error("Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","El número de argumentos no es correcto");
+        // print_error("Error(EX_USAGE), uso incorrecto del mandato.\"Success\"","El número de argumentos no es correcto");
         // return EX_USAGE;
     }
   }

@@ -5,11 +5,12 @@
 
 int getN(FILE *fp){
 	int contador = 0;
-
+	char c;
 	while(!feof(fp)){
-		contador++;
+		c = fgetc(fp);
+		if(c == '\n')
+			contador++;
 	}
-	printf("as\n");
 	return contador;
 }
 
@@ -28,7 +29,8 @@ int main (int argc,char *argv[]){
 			if(fp == NULL) {
 		    printf("Error opening file");
    		}else{
-				char *arr[5];
+				int tam = getN(fp);
+				char *arr[tam];
 				int j = 0;
 				char str[2048];
 				while(fgets(str,2048,fp) != NULL){
@@ -36,7 +38,7 @@ int main (int argc,char *argv[]){
 					j ++;
 				}
 				j --;
-				for(j;j>=0;j--){
+				for(;j>=0;j--){
 					printf("%s\n", arr[j]);
 				}
 			}

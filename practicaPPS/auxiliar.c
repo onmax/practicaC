@@ -61,7 +61,7 @@ void imprimir(double fin,double inicio,double salto){
     }
   }
 }
-void error(char *primero, char *segundo){
+void print_error(char *primero, char *segundo){
   fprintf(stderr, "%s%s\n", "secuencia: ", primero);
   fprintf(stderr, "%s%s\n", "+secuencia ",segundo);
 }
