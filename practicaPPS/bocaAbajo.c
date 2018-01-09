@@ -16,7 +16,7 @@ int main (int argc,char *argv[]){
 	}else if(argc == 1){
 		lineas = (char **)malloc(sizeof (char *));
 		while(fgets(linea,MAX,stdin))
-			lineas = (char **)realloc(sizeof(char *));
+			lineas = (char **)realloc(lineas,sizeof(char *));
 		str_linea[nfila] = strup(linea);
 		nfila ++;
 		for(i = 0;i<nfila;i++)
@@ -36,7 +36,7 @@ int main (int argc,char *argv[]){
 				return EX_NOINPUT;
 			}else{
 				while(fgets(linea,MAX,fp))
-					lineas = (char **)realloc(sizeof(char *));
+					lineas = (char **)realloc(lineas,sizeof(char *));
 				str_linea[nfila] = strup(linea);
 				nfila ++;
 				fclose(entrada);
