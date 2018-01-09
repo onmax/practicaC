@@ -25,12 +25,15 @@ int main (int argc,char **argv){
 			char res[2048];
 			memset(str,'\0',2048);
 			memset(res,'\0',2048);
-			while(!feof(fp)) {
-				fgets(str,MAX,fp);
-				for(int i = strlen(str)-1;i>=0; i--){
+			while(fgets(str,MAX,fp) != NULL) {
+				strtok(str, "\n");
+				int i;
+				for(i = strlen(str)-1;i>=0; i--){
 					res[(strlen(str)-1-i)]=str[i];
 				}
+				// res[strlen(str)]="\n";
 				fputs(res, stdout);
+				printf("\n");
 				memset(str,'\0',2048);
 				memset(res,'\0',2048);
 			}
