@@ -11,7 +11,6 @@ int main (int argc,char *argv[]){
   }else{
     double primer;
     primer = strtod(argv[1], &ptr);
-
     if(primer>MAX_OUTPUT || primer==10){
       if(primer>MAX_OUTPUT)
         print_error("Error(EX_NOPERM), permiso denegado.\"Success\"","Se intento superar el límite de salida.");

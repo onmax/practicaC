@@ -1,9 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-//DESCOMENTAR
-//#include<sysexits.h>
-// #include"auxiliar.c"
+#include"auxiliar.c"
 #define MAX 2048
 
 int main (int argc,char **argv){
@@ -18,8 +16,7 @@ int main (int argc,char **argv){
 			if(fp == NULL){
 				fprintf(stderr, "Error(EX_NOINPUT), uso incorrecto del mandato.\"Success\"\n");
 				fprintf(stderr, "El fichero %s no pudo ser leído\n", argv[i]);
-				//DESCOMENTAR
-				// return EX_NOINPUTM;
+				return EX_NOINPUTM;
 			}
 			char str[2048];
 			char res[2048];
