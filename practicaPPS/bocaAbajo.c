@@ -14,9 +14,9 @@ int main (int argc,char *argv[]){
 		printf("bocabajo: Invierte el orden de las lineas de los ficheros (o de la entrada).\n");
 		return EX_OK;
 	}else if(argc == 1){
-		lineas = (char **)malloc(sizeof (char *));
+		str_linea = (char **)malloc(sizeof (char *));
 		while(fgets(linea,MAX,stdin))
-			lineas = (char **)realloc(lineas,sizeof(char *));
+			str_linea = (char **)realloc(str_linea,sizeof(char *));
 		str_linea[nfila] = strup(linea);
 		nfila ++;
 		for(i = 0;i<nfila;i++)
@@ -27,19 +27,18 @@ int main (int argc,char *argv[]){
 	}else{
 		for(i=argc-1;i>0;i--){
 			char *archivo =argv[1];
-			lineas = (char **) malloc(sizeof (char *));
+			str_linea = (char **) malloc(sizeof (char *));
       nfila = 0;
 			if ((fp = fopen (argv[i], "rt") ) == NULL){
-				//ERRORES DE NO ABRIR EL ARCHIVO
 				fprintf(stderr, "Error(EX_NOINPUT), uso incorrecto del mandato.\"Success\"\n");
 				fprintf(stderr, "El fichero %s no puede ser leido.",argv[i]);
 				return EX_NOINPUT;
 			}else{
 				while(fgets(linea,MAX,fp))
-					lineas = (char **)realloc(lineas,sizeof(char *));
+					str_linea = (char **)realloc(str_linea,sizeof(char *));
 				str_linea[nfila] = strup(linea);
 				nfila ++;
-				fclose(entrada);
+				fclose(fp);
 				for(j = 0;j<nfila;j++)
 					printf("%s\n", linea[nfila-1-j]);
 				for (j = 0; j < nfila; j++)
